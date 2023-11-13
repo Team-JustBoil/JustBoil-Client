@@ -1,0 +1,14 @@
+
+.food-videos {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px; /* 아이템 간격 */
+  padding: 20px; /* 패딩 */
+}
+
+/* 더 작은 화면에서 아이템들을 한 열로 배치 */
+@media (max-width: 600px) {
+  .food-videos {
+    grid-template-columns: 1fr; /* 모바일 화면에서 한 열로 */
+  }
+}

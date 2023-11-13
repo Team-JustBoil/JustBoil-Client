@@ -1,0 +1,45 @@
+/* VideoItem 컴포넌트를 위한 스타일 */
+.video-item {
+    border: 1px solid #ddd; /* 테두리 */
+    border-radius: 8px; /* 테두리 둥글게 */
+    overflow: hidden; /* 내용이 넘치면 숨김 */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* 그림자 효과 */
+    background: #fff; /* 배경 색상 */
+    transition: transform 0.3s ease; /* 호버 시 변형 효과 */
+
+    width: 30%; /* 너비를 화면의 30%로 설정 */
+    margin: 0 auto; /* 중앙 정렬을 위한 마진 설정 */    
+  }
+  
+  .video-item:hover {
+    transform: scale(1.03); /* 호버 시 약간 확대 */
+  }
+  
+  .video-item img {
+    width: 100%; /* 이미지 너비 */
+    height: auto; /* 이미지 높이 자동 조절 */
+  }
+  
+  .video-item h3 {
+    font-size: 1rem; /* 제목 글꼴 크기 */
+    margin: 10px; /* 제목 여백 */
+  }
+  
+  .video-item a {
+    display: block;
+    text-align: center;
+    color: #cc0000; /* YouTube 색상 */
+    padding: 10px; /* 링크 패딩 */
+    text-decoration: none; /* 밑줄 없애기 */
+    border-top: 1px solid #ddd; /* 상단 테두리 */
+  }
+  
+  .video-item a:hover {
+    background-color: #f9f9f9; /* 호버 시 배경색 변경 */
+  }
+  /* 화면 너비가 900px 이하일 때 적용할 스타일 */
+@media screen and (max-width: 900px) {
+    .video-item {
+      width: 300px; /* 너비를 300px로 고정 */
+    }
+  }
