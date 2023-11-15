@@ -6,6 +6,16 @@
   padding: 20px; /* 패딩 */
 }
 
+.search-food{
+  margin-top: 20px;
+  padding: 15px;
+  background-color: #f8f8f8;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  font-size: 1.2em;
+  text-align: center;
+}
+
 /* 더 작은 화면에서 아이템들을 한 열로 배치 */
 @media (max-width: 600px) {
   .food-videos {

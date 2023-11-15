@@ -9,6 +9,8 @@ function VideoItem({ video }) {
       <a href={`https://www.youtube.com/watch?v=${video.id}`} target="_blank" rel="noopener noreferrer">
         링크로 이동
       </a>
+      <p>Views: {video.viewCount}</p>
+      <p>YouTube ID: {video.id}</p>
     </div>
   );
 }
