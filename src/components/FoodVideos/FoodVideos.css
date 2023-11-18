@@ -1,13 +1,14 @@
 
 .food-videos {
   display: grid;
+
   grid-template-columns: 1fr;
   gap: 20px; /* 아이템 간격 */
   padding: 20px; /* 패딩 */
 }
 
 .search-food{
-  margin-top: 20px;
+  margin-top: 80px;
   padding: 15px;
   background-color: #f8f8f8;
   border-radius: 8px;

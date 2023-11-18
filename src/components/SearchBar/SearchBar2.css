@@ -1,0 +1,63 @@
+/* SearchBar.css */
+
+.search-container {
+    display: flex;
+    align-items: center;
+    background-color: #db333d; /* Dark background color */
+    justify-content: space-between; /* 이 부분이 추가되었습니다 */
+    padding: 10px;
+    position: fixed; /* Fixed positioning */
+    top: 0; /* Align to the top */
+    left: 0; /* Align to the left */
+    right: 0; /* Ensure it stretches to the right edge */
+    z-index: 1000; /* Ensure it stays on top of other content */
+    max-width: 100%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); /* Optional: Adds a shadow for depth */
+}
+
+.youtube-logo {
+    /* background: url('./skkul_logo3.png') no-repeat center center;  */
+    background-size: contain;
+    height: 40px;
+    width: 40px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+}
+
+.search-bar {
+    display: flex;
+    flex-grow: 0.8;
+    margin-left: 20px;
+}
+
+.search-input {
+    flex-grow: 1;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 25px;
+    font-size: 16px;
+}
+
+.search-button {
+    background: url('./skkul_search_logo.png') no-repeat center center; /* 이미지 경로 업데이트 */
+    background-color: #db333d; /* Slightly lighter dark color for contrast */
+    border: none;
+    padding: 8px 15px;
+    margin: 0 10px 0 10px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 16px;
+    color: white; /* White color for the search icon */
+    background-size: 30px; 
+}
+
+.menu-button {
+    background: url('./skkul_search_menu.png') no-repeat center center; /* 이미지 경로 업데이트 */
+    background-color: #db333d; /* Slightly lighter dark color for contrast */
+    border: none;
+    padding: 20px 20px;
+    cursor: pointer;
+    background-size: contain;
+}
+

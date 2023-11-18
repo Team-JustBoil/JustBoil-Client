@@ -1,54 +1,70 @@
-import React ,{useState,useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import VideoItem from '../VideoItem/VideoItem';
 import './FoodVideos.css';
 
-function FoodVideos() {
+function FoodVideos({ searchTerm }) {
   const [videos, setVideos] = useState([]);
-  const [searchFood,setSearchFood] = useState('');
-  
-  // video 배열에 추가하는 useEffect 이고 
+  const [startIndex, setStartIndex] = useState(0);
+  const [isLoading, setIsLoading] = useState(false);
+
+  // 데이터 로드 함수
+  const loadVideos = () => {
+    if (isLoading) return;
+
+    setIsLoading(true);
+    fetch('https://www.just-boil.o-r.kr:8080', {
+      method: 'POST', //POST API 사용
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        type_number: 1,
+        food_name: searchTerm,
+        start_index: startIndex
+      }),
+    })
+    .then(response => response.json())
+    .then(data => {
+      // json 췤
+      console.log(data); 
+      // 데이터 처리
+      setVideos(prevVideos => [...prevVideos, ...data.data.recipe_response_list]);
+      setStartIndex(prevIndex => prevIndex + 3);
+      setIsLoading(false);
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      setIsLoading(false);
+    });
+  };
+
+  // 스크롤 이벤트 핸들러
+  const handleScroll = () => {
+    if (window.innerHeight + document.documentElement.scrollTop !== document.documentElement.offsetHeight) return;
+    loadVideos();
+  };
+
+  // 컴포넌트 마운트 시 스크롤 이벤트 리스너 추가 및 데이터 로드
   useEffect(() => {
-    const dummy = {
-      recipeList: [
-        {
-          id: 2834, 
-          title: '연애 검열 (SUB)', 
-          thumbnail: 'https://i.ytimg.com/an_webp/y9djoCtUQLA/mqdefault_6s.webp?du=3000&sqp=CLDyxqoG&rs=AOn4CLDHu2u9TPjnC2lONos62uF7kpQQHg',
-          youtubeId: 'y9djoCtUQLA',
-          viewCount: 8085492
-        },
-        {
-          id: 23213,
-          title: '친구 애인은 친척 (SUB)',
-          thumbnail: 'https://i.ytimg.com/an_webp/QRqbfpqqb4w/mqdefault_6s.webp?du=3000&sqp=CPSkx6oG&rs=AOn4CLDZ20Xj5VIjnYQtAnJwJUjqXTXnyg',
-          youtubeId: 'QRqbfpqqb4w',
-          viewCount: 323233
-        },
-        {
-          id: 23232,
-          title: '이별 여행 특 (SUB)',
-          thumbnail: 'https://i.ytimg.com/an_webp/mVK1ihiJ7Ms/mqdefault_6s.webp?du=3000&sqp=CPT7xqoG&rs=AOn4CLCLvB6ePuljifBG36PgKD3YY5wJCQ',
-          youtubeId: 'mVK1ihiJ7Ms',
-          viewCount: 3212312313
-        }
-      ],
-      foodName: "떡볶이"
-    }
-  
-    setVideos(dummy.recipeList);
-    setSearchFood(dummy.foodName);
+    window.addEventListener('scroll', handleScroll);
+    loadVideos();
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
   }, []);
 
   return (
     <>
       <div className="search-food">
-        짜잔 원하던 {searchFood} 레시피를 준비했어!
+        짜잔 원하던 {searchTerm} 레시피를 준비했어!
       </div>
       <div className="food-videos">
         {videos.map(video => (
           <VideoItem key={video.id} video={video} />
         ))}
       </div>
+      {isLoading && <div>Loading...</div>}
     </>
   );
 }

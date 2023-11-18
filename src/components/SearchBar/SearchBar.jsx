@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './SearchBar.css';
+import './SearchBar2.css';
 
 function SearchBar({ onSearch }) {
   const [searchTerm, setSearchTerm] = useState('');
@@ -11,7 +11,7 @@ function SearchBar({ onSearch }) {
 
   return (
     <div className="search-container">
-      <button onClick={() => window.location.reload()} className="youtube-logo">
+      <button onClick={() => window.location.reload()} className="youtube-logo">슥끄려바
       </button>
 
       <form onSubmit={handleSubmit} className="search-bar">
@@ -23,12 +23,9 @@ function SearchBar({ onSearch }) {
           className="search-input"
         />
         <button type="submit" className="search-button">
-          🔍
         </button>
       </form>
-
       <button className="menu-button">
-        ☰
       </button>
     </div>
   );

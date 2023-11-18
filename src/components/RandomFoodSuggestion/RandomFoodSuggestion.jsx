@@ -15,23 +15,23 @@ function RandomFoodSuggestion() {
       recipeList: [
         {
           id: 2834, 
-          title: '연애 검열 (SUB)', 
-          thumbnail: 'https://i.ytimg.com/an_webp/y9djoCtUQLA/mqdefault_6s.webp?du=3000&sqp=CLDyxqoG&rs=AOn4CLDHu2u9TPjnC2lONos62uF7kpQQHg',
-          youtubeId: 'y9djoCtUQLA',
+          title: '[ᴘʟᴀʏʟɪsᴛ] 90년대생의 그시절 크리스마스 K-캐롤 ☃️🎅🎄)', 
+          thumbnail: 'https://i.ytimg.com/vi/v3LRwxfAiNU/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDWoT8I3t_oGbC8KGp9EXZyHr_1QA',
+          youtubeId: 'v3LRwxfAiNU',
           viewCount: 8085492
         },
         {
           id: 23213,
-          title: '친구 애인은 친척 (SUB)',
-          thumbnail: 'https://i.ytimg.com/an_webp/QRqbfpqqb4w/mqdefault_6s.webp?du=3000&sqp=CPSkx6oG&rs=AOn4CLDZ20Xj5VIjnYQtAnJwJUjqXTXnyg',
-          youtubeId: 'QRqbfpqqb4w',
+          title: '산타도 대놓고 듣는다는 그 팝송',
+          thumbnail: 'https://i.ytimg.com/vi/8MhtzapYzGo/hq720.jpg?sqp=-oaymwE2CNAFEJQDSFXyq4qpAygIARUAAIhCGAFwAcABBvABAfgB1AaAAuADigIMCAAQARhyIEkoLDAP&rs=AOn4CLCGqajAUTiyE3KcF3ilP26lzrqJtw',
+          youtubeId: '8MhtzapYzGo',
           viewCount: 323233
         },
         {
           id: 23232,
           title: '이별 여행 특 (SUB)',
           thumbnail: 'https://i.ytimg.com/an_webp/mVK1ihiJ7Ms/mqdefault_6s.webp?du=3000&sqp=CPT7xqoG&rs=AOn4CLCLvB6ePuljifBG36PgKD3YY5wJCQ',
-          youtubeId: 'mVK1ihiJ7Ms',
+          youtubeId: '8MhtzapYzGo',
           viewCount: 3212312313
         }
       ],
@@ -40,6 +40,28 @@ function RandomFoodSuggestion() {
     setRandomFoodVideos(dummy.recipeList);
   }, []);
 
+  //서버와 통신 
+  // useEffect(() => {
+  //   // 서버에 데이터 요청하는 함수
+  //   const fetchData = async () => {
+  //     try {
+  //       // 서버로부터 데이터를 받아오는 부분
+  //       // 여기서 'your-server-endpoint'는 실제 서버의 URL로 바꿔야 합니다.
+  //       const response = await fetch(`your-server-endpoint?searchTerm=${randomFood}`);
+  //       if (!response.ok) {
+  //         throw new Error('서버 응답이 올바르지 않습니다.');
+  //       }
+  //       const data = await response.json();
+
+  //       // 받아온 데이터를 videos 상태에 저장
+  //       setVideos(data.recipeList);
+  //     } catch (error) {
+  //       console.error('데이터를 불러오는데 실패했습니다:', error);
+  //     }
+  //   };
+
+  //   fetchData();
+  // }, []);
   return (
     <>
       <div className="random-food-suggestion">

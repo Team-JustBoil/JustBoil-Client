@@ -34,6 +34,11 @@
     border-top: 1px solid #ddd; /* 상단 테두리 */
   }
   
+  .video-item p {
+    color: #606060;
+    margin: 4px 0;
+    font-size: 14px;
+  }
   .video-item a:hover {
     background-color: #f9f9f9; /* 호버 시 배경색 변경 */
   }
