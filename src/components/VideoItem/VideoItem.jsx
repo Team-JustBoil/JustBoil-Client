@@ -6,11 +6,11 @@ function VideoItem({ video }) {
     <div className="video-item">
       <img src={video.thumbnail} alt={`${video.title}`} />
       <h3>{video.title}</h3>
-      <a href={`https://www.youtube.com/watch?v=${video.id}`} target="_blank" rel="noopener noreferrer">
-        링크로 이동
+      <p>조회수 : {video.view_count}</p>
+      <a href={`https://www.youtube.com/watch?v=${video.youtube_id}`} target="_blank" rel="noopener noreferrer">
+        유투브로 보기
       </a>
-      <p>Views: {video.viewCount}</p>
-      <p>YouTube ID: {video.id}</p>
+      
     </div>
   );
 }

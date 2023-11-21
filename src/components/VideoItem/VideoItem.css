@@ -7,7 +7,7 @@
     background: #fff; /* 배경 색상 */
     transition: transform 0.3s ease; /* 호버 시 변형 효과 */
 
-    width: 30%; /* 너비를 화면의 30%로 설정 */
+    width: 300px; /* 너비를 화면의 30%로 설정 */
     margin: 0 auto; /* 중앙 정렬을 위한 마진 설정 */    
   }
   

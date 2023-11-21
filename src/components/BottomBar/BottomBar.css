@@ -1,0 +1,45 @@
+.bottom-bar {
+    display: flex;
+    align-items: center;
+    background-color: #db333d; 
+    justify-content: space-evenly; 
+    padding: 0 10px;
+    border-radius: 30px;
+    position: fixed; /* Fixed positioning */
+    bottom: 0; /* Align to the top */
+    left: 0; /* Align to the left */
+    right: 0; /* Ensure it stretches to the right edge */
+    z-index: 1000; /* Ensure it stays on top of other content */
+    max-width: 400px; /* 모바일 화면 폭에 맞춤 */
+    margin: 0 auto; /* 화면 중앙 정렬 */
+}
+
+
+.bottom-bar-button {
+    flex: 0 0 auto; /* flex-grow, flex-shrink, flex-basis 설정 */
+    width: 60px; /* 버튼의 너비 */
+    height: 60px; /* 버튼의 높이 */
+    padding: 10px;
+    margin: 0 20px;
+    border-radius: 30px;
+    background-size: contain; /* 배경 이미지가 버튼 내에 맞게 조정 */
+    border: none;
+}
+
+/* 다른 클래스와 속성은 이전과 동일 */
+
+
+.one {
+    background: url('./recipe.png') no-repeat center center; 
+    background-size: cover;
+}
+
+.two {
+    background: url('./mukbang.png') no-repeat center center; 
+    background-size: cover;
+}
+
+.thr {
+    background: url('./menu.png') no-repeat center center; 
+    background-size: cover;
+}

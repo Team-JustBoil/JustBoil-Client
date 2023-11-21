@@ -1,6 +1,8 @@
 body {
   margin: 0;
   font-family: 'Arial', sans-serif;
+  max-width: 400px; /* 모바일 화면 폭에 맞춤 */
+  margin: 80px auto 0  auto; /* 화면 중앙 정렬 */
 
 }
 
@@ -11,7 +13,8 @@ body {
   margin: 0 auto; /* 화면 중앙 정렬 */
   height: 100vh; /* 전체 화면 높이 */
   overflow-y: auto; /* 세로 스크롤 가능 */
-  
+  max-width: 400px; /* 모바일 화면 폭에 맞춤 */
+  margin: 80px auto 0  auto; /* 화면 중앙 정렬 */
 }
 
 .search-bar, .random-food-suggestion, .food-videos {

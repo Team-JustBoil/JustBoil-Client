@@ -10,25 +10,21 @@ function FoodVideos({ searchTerm }) {
   // 데이터 로드 함수
   const loadVideos = () => {
     if (isLoading) return;
-
     setIsLoading(true);
-    fetch('https://www.just-boil.o-r.kr:8080', {
-      method: 'POST', //POST API 사용
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        type_number: 1,
-        food_name: searchTerm,
-        start_index: startIndex
-      }),
+
+    // 서버 통신
+    const url = `https://www.just-boil.o-r.kr/search/1?keyword=${encodeURIComponent(searchTerm)}&index=${startIndex}`;
+    fetch(url, {
+      method: 'GET',
     })
     .then(response => response.json())
     .then(data => {
-      // json 췤
-      console.log(data); 
+      // json 처리
+      console.log(data);
       // 데이터 처리
-      setVideos(prevVideos => [...prevVideos, ...data.data.recipe_response_list]);
+      // null이 아닌 요소만 필터링
+      const filteredVideos = data.data.recipe_response_list.filter(video => video !== null);
+      setVideos(prevVideos => [...prevVideos, ...filteredVideos]);
       setStartIndex(prevIndex => prevIndex + 3);
       setIsLoading(false);
     })
@@ -38,21 +34,24 @@ function FoodVideos({ searchTerm }) {
     });
   };
 
-  // 스크롤 이벤트 핸들러
+  // 스크롤 이벤트 처리 함수
   const handleScroll = () => {
-    if (window.innerHeight + document.documentElement.scrollTop !== document.documentElement.offsetHeight) return;
+    if (window.innerHeight + document.documentElement.scrollTop !== document.documentElement.offsetHeight || isLoading) return;
     loadVideos();
   };
 
-  // 컴포넌트 마운트 시 스크롤 이벤트 리스너 추가 및 데이터 로드
+  // 컴포넌트 마운트 및 searchTerm 변경 시
+  useEffect(() => {
+    setVideos([]);
+    setStartIndex(0);
+    loadVideos();
+  }, [searchTerm]);
+
+  // 스크롤 이벤트 리스너 등록 및 해제
   useEffect(() => {
     window.addEventListener('scroll', handleScroll);
-    loadVideos();
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [isLoading]);
 
   return (
     <>
@@ -64,7 +63,7 @@ function FoodVideos({ searchTerm }) {
           <VideoItem key={video.id} video={video} />
         ))}
       </div>
-      {isLoading && <div>Loading...</div>}
+      {isLoading && <div className="loading">Loading...</div>}
     </>
   );
 }

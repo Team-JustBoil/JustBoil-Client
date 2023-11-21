@@ -3,25 +3,27 @@
 .search-container {
     display: flex;
     align-items: center;
-    background-color: #db333d; /* Dark background color */
-    justify-content: space-between; /* 이 부분이 추가되었습니다 */
+    background-color: #db333d; 
+    justify-content: space-between; 
     padding: 10px;
+    border-radius: 30px;
     position: fixed; /* Fixed positioning */
     top: 0; /* Align to the top */
     left: 0; /* Align to the left */
     right: 0; /* Ensure it stretches to the right edge */
     z-index: 1000; /* Ensure it stays on top of other content */
-    max-width: 100%;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); /* Optional: Adds a shadow for depth */
+    max-width: 400px; /* 모바일 화면 폭에 맞춤 */
+    margin: 0 auto; /* 화면 중앙 정렬 */
+   /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);  Optional: Adds a shadow for depth */
 }
 
 .youtube-logo {
-    /* background: url('./skkul_logo3.png') no-repeat center center;  */
+    background: url('./skkul_logo5.png') no-repeat center center; 
     background-size: contain;
     height: 40px;
-    width: 40px;
+    width: 80px;
     border: none;
-    border-radius: 25px;
+    /* border-radius: 20px; */
     cursor: pointer;
 }
 
@@ -54,10 +56,35 @@
 
 .menu-button {
     background: url('./skkul_search_menu.png') no-repeat center center; /* 이미지 경로 업데이트 */
-    background-color: #db333d; /* Slightly lighter dark color for contrast */
+    background-color: #db333d; 
     border: none;
     padding: 20px 20px;
     cursor: pointer;
     background-size: contain;
 }
+/* 슬라이딩 메뉴 스타일 */
+.menu {
+    position: fixed;
+    top: -100%; /* 메뉴 초기 위치를 화면 상단 밖으로 설정 */
+    height: 100%; /* 메뉴의 높이 */
+    background: black;
+    transition: top 0.5s ease; /* 위에서 아래로 슬라이딩 효과 */
+    max-width: 400px; /* 모바일 화면 폭에 맞춤 */
+    margin: 0 auto; /* 화면 중앙 정렬 */
+  }
+  
+  /* 메뉴가 보이는 상태 */
+  .menu-open {
+    top: 0;
+  }
+
+  .menu-open-button {
+    position: absolute; /* 절대 위치 */
+    bottom: 10px;          /* 상단에서부터의 거리 */
+    right: 10px;        /* 오른쪽에서부터의 거리 */
+    width:50px;
+    height: 30px;;
+  }
+  
+  
 
