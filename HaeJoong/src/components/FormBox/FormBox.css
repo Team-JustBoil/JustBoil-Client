@@ -1,0 +1,66 @@
+/* FormBox */
+
+.form-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+  }
+  
+  p {
+    margin-bottom: 10px;
+  }
+  
+  .button-container {
+    display: flex;
+    /* gap: 1px; */
+    overflow: hidden;
+  }
+  
+  .button-label { 
+    /* flex: 1; 남은 공간을 모두 차지하도록 설정 */
+    max-width: 100px; /* 최대 가로 크기를 100px로 설정 */
+    width: 100px;
+    height: 50px;
+    padding: 8px 16px;
+    background-color: #F7F7F9;
+    color: black;
+    border: 1px solid black;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s, filter 0.3s, transform 0.3s;
+    margin-right: -1px;
+    position: relative;
+    z-index: 1;
+}
+  
+  /* 선택된 버튼에 대한 스타일 */
+  .button-label.selected {
+    background-color: #F7F7F9;
+    color: #D2302C;
+    border-color: #D2302C;
+    z-index: 2;
+    /* F7F7F9 */
+    /*filter: brightness(0.85);*/ 
+  }
+  
+  /* .button-label.hovered { */
+    /* transform: scale(1.1); 1.1배 크기로 확대 */
+  /* } */
+  
+  .button-container .button-label:first-child {
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+    /* border-right: none; */
+  }
+  
+  .button-container .button-label:last-child {
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    margin-right: 0px;
+    /* border-left: none; */
+  }
+  
