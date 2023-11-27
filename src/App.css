@@ -1,9 +1,8 @@
-body {
-  margin: 0;
-  font-family: 'Arial', sans-serif;
-  max-width: 400px; /* 모바일 화면 폭에 맞춤 */
-  margin: 80px auto 0  auto; /* 화면 중앙 정렬 */
 
+.App-back {
+  display: flex;
+  justify-content: center;
+  background-color: black; /* 전체 배경 색상 */
 }
 
 .App {

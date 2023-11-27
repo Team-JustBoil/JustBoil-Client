@@ -56,7 +56,8 @@ function FoodVideos({ searchTerm }) {
   return (
     <>
       <div className="search-food">
-        짜잔 원하던 {searchTerm} 레시피를 준비했어!
+        <img src="src/components/RandomFoodSuggestion/ai-icon.png" alt="캐릭터" className="character-image"/>
+        <div className="text-bubble">너가 원하던 {searchTerm} 레시피야</div>
       </div>
       <div className="food-videos">
         {videos.map(video => (

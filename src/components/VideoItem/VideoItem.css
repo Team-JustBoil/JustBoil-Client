@@ -1,50 +1,76 @@
 /* VideoItem 컴포넌트를 위한 스타일 */
+.video-item-container {
+  perspective: 1000px;
+  display: flex;
+}
+
 .video-item {
     border: 1px solid #ddd; /* 테두리 */
-    border-radius: 8px; /* 테두리 둥글게 */
     overflow: hidden; /* 내용이 넘치면 숨김 */
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* 그림자 효과 */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 1); /* 그림자 효과 */
     background: #fff; /* 배경 색상 */
-    transition: transform 0.3s ease; /* 호버 시 변형 효과 */
+    transition: all 1s; /* 클릭 시 변형 효과 */
+    min-height: auto ; 
+    width: 350px;
+    margin: 0 auto; /* 중앙 정렬을 위한 마진 설정 */  
+    transform-style: preserve-3d; /* 3D 변환 스타일 */
+    cursor: pointer;
+    position: relative;
+    border-radius: 8px;
 
-    width: 300px; /* 너비를 화면의 30%로 설정 */
-    margin: 0 auto; /* 중앙 정렬을 위한 마진 설정 */    
   }
+
+.front, .back {
+    backface-visibility: hidden;
+    width: 100%;
+    height: 100%; /* 높이를 100%로 설정 */
+    max-height: 500px; /* 최대 높이 설정, 필요에 따라 조절 */
+    top: 0;
+    left: 0;
+    position: relative;
+    /* display: flex; */
+    align-items: center;
+    justify-content: center;
+}
+
+.video-item:hover {
+  transform: scale(1.03);   } 
+
+.video-item img {
+  width: 100%; /* 이미지 너비 */
+  height: auto; /* 이미지 높이 자동 조절 */
+  object-fit: cover; /* 이미지 비율 유지하면서 크기 조절 */
+}
   
-  .video-item:hover {
-    transform: scale(1.03); /* 호버 시 약간 확대 */
-  }
+.video-item h3 {
+  font-size: 1.2rem; /* 제목 글꼴 크기 */
+  margin: 10px; /* 제목 여백 */
+}
   
-  .video-item img {
-    width: 100%; /* 이미지 너비 */
-    height: auto; /* 이미지 높이 자동 조절 */
-  }
+.video-item a {
+  display: block;
+  text-align: center; 
+  padding: 11px; /* 링크 패딩 */
+  text-decoration: none; /* 밑줄 없애기 */
+  border-top:1px solid #ddd;
+  background-image: url(./youtube_logo.png);
+  background-size: 100px 20px;
+  background-repeat: no-repeat; /* 이미지 반복 방지 */
+  background-position: center; /* 이미지를 중앙에 배치 */
+  border : 10px;
+}
   
-  .video-item h3 {
-    font-size: 1rem; /* 제목 글꼴 크기 */
-    margin: 10px; /* 제목 여백 */
-  }
-  
-  .video-item a {
-    display: block;
-    text-align: center;
-    color: #cc0000; /* YouTube 색상 */
-    padding: 10px; /* 링크 패딩 */
-    text-decoration: none; /* 밑줄 없애기 */
-    border-top: 1px solid #ddd; /* 상단 테두리 */
-  }
-  
-  .video-item p {
-    color: #606060;
-    margin: 4px 0;
-    font-size: 14px;
-  }
-  .video-item a:hover {
-    background-color: #f9f9f9; /* 호버 시 배경색 변경 */
-  }
+.video-item p {
+  color: #606060;
+  margin: 4px 0;
+  font-size: 14px;
+}
+.video-item a:hover {
+  background-color: #f9f9f9; /* 호버 시 배경색 변경 */
+}
   /* 화면 너비가 900px 이하일 때 적용할 스타일 */
 @media screen and (max-width: 900px) {
     .video-item {
-      width: 300px; /* 너비를 300px로 고정 */
+      width: 350px; /* 너비를 300px로 고정 */
     }
   }
