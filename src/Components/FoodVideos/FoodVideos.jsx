@@ -34,6 +34,17 @@ function FoodVideos({ searchTerm }) {
     });
   };
 
+  // summary 업데이트 함수
+  const updateVideoSummary = (videoId, newSummary) => {
+    setVideos(videos => videos.map(video => {
+      if (video.id === videoId) {
+        return { ...video, summary: newSummary };
+      }
+      return video;
+    }));
+  };
+
+
   // 스크롤 이벤트 처리 함수
   const handleScroll = () => {
     if (window.innerHeight + document.documentElement.scrollTop !== document.documentElement.offsetHeight || isLoading) return;
@@ -61,7 +72,7 @@ function FoodVideos({ searchTerm }) {
       </div>
       <div className="food-videos">
         {videos.map(video => (
-          <VideoItem key={video.id} video={video} />
+          <VideoItem key={video.id} video={video} updateVideoSummary={updateVideoSummary}/>
         ))}
       </div>
       {isLoading && <div className="loading">Loading...</div>}
