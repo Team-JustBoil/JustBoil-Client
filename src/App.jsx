@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import SearchBar from './components/SearchBar/SearchBar';
-import RandomFoodSuggestion from './components/RandomFoodSuggestion/RandomFoodSuggestion';
-import FoodVideos from './components/FoodVideos/FoodVideos';
-import ModalMenu from './components/ModalMenu/ModalMenu';
+import SearchBar from "./Components/SearchBar/SearchBar";
+import FoodVideos from './Components/FoodVideos/FoodVideos';
+import RandomFoodSuggestion from './Components/RandomFoodSuggestion/RandomFoodSuggestion';
+import ModalMenu from './Components/ModalMenu/ModalMenu';
 
 function App() {
   const [searchTerm, setSearchTerm] = useState('');

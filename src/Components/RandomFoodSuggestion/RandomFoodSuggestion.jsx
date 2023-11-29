@@ -83,7 +83,7 @@ function RandomFoodSuggestion() {
   return (
     <>
       <div className="random-food-suggestion">
-        <img src="src/components/RandomFoodSuggestion/ai-icon.png" alt="캐릭터" className="character-image"/>
+        <img src="src/Components/RandomFoodSuggestion/ai-icon.png" alt="캐릭터" className="character-image"/>
         <div className="text-bubble">오늘은 {randomFood} 어때??</div>
       </div>
       <div className="randomfood-videos">
