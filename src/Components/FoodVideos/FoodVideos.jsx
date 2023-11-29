@@ -67,7 +67,7 @@ function FoodVideos({ searchTerm }) {
   return (
     <>
       <div className="search-food">
-        <img src="src/components/RandomFoodSuggestion/ai-icon.png" alt="캐릭터" className="character-image"/>
+        <img src="src/Components/RandomFoodSuggestion/ai-icon.png" alt="캐릭터" className="character-image"/>
         <div className="text-bubble">너가 원하던 {searchTerm} 레시피야</div>
       </div>
       <div className="food-videos">

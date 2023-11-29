@@ -7,7 +7,12 @@ import ModalMenu from './Components/ModalMenu/ModalMenu';
 function App() {
   const [searchTerm, setSearchTerm] = useState('');
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [privateNum,usePrivateNum] = useState(1);
 
+  const handlePrivateNum = (newPrivateNum) => {
+    setPrivateNum();
+    console.log("setPrivateNum");
+  }
   const handleSearch = (newSearchTerm) => {
     setSearchTerm(newSearchTerm);
     // console.log('handleSearch'); 문제없음

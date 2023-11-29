@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef,forwardRef } from 'react';
-import '../VideoItem/VideoItem.css';
+import './VideoItem.css';
 import BackItem from './BackItem/BackItem';
 import FrontItem from './FrontItem/FrontItem';
 
