@@ -1,23 +1,26 @@
 import React, { useState } from 'react';
 import './FormBox.css';
 
-const FormBox = ({ question, buttonCount, buttonTexts }) => {
+const FormBox = ({ question, buttonCount, buttonTexts, onChange }) => {
   const [selectedButton, setSelectedButton] = useState(null);
   const [isHovered, setIsHovered] = useState(null);
 
   const handleButtonClick = (buttonNumber) => {
-    // 이미 선택된 버튼을 눌렀을 경우 선택 해제
     if (selectedButton === buttonNumber) {
       setSelectedButton(null);
     } else {
       setSelectedButton(buttonNumber);
     }
+
+    // 부모 컴포넌트의 콜백 함수 호출
+    onChange(selectedButton === buttonNumber ? null : buttonNumber - 1);
   };
 
   return (
     <div className="form-box">
-      {/* <p>{selectedButton ? `${selectedButton}` : 'X'}</p> */}
-      <h3>{question} {selectedButton ? `${selectedButton-1}` : 'X'}</h3>
+      <h3>
+        {question} {selectedButton !== null ? `${selectedButton - 1}` : 'X'}
+      </h3>
       <br />
       <div className="button-container">
         {buttonTexts.map((text, index) => (
