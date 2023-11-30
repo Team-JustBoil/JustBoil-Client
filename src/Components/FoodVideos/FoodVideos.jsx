@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import VideoItem from '../VideoItem/VideoItem';
 import './FoodVideos.css';
+import SummaryEffect from '../VideoItem/SummaryEffect/SummaryEffect';
 
-function FoodVideos({ searchTerm }) {
+function FoodVideos({ searchTerm,privateNum}) {
   const [videos, setVideos] = useState([]);
   const [startIndex, setStartIndex] = useState(0);
   const [isLoading, setIsLoading] = useState(false);
+  const [localPrivateNum,setLocalPrivateNum]=useState(1);
 
   // 데이터 로드 함수
   const loadVideos = () => {
@@ -13,7 +15,7 @@ function FoodVideos({ searchTerm }) {
     setIsLoading(true);
 
     // 서버 통신
-    const url = `https://www.just-boil.o-r.kr/search/1?keyword=${encodeURIComponent(searchTerm)}&index=${startIndex}`;
+    const url = `https://www.just-boil.o-r.kr/search/${localPrivateNum}?keyword=${encodeURIComponent(searchTerm)}&index=${startIndex}`;
     fetch(url, {
       method: 'GET',
     })
@@ -53,9 +55,10 @@ function FoodVideos({ searchTerm }) {
 
   // 컴포넌트 마운트 및 searchTerm 변경 시
   useEffect(() => {
+    setLocalPrivateNum(privateNum);
     setVideos([]);
     setStartIndex(0);
-    loadVideos();
+    loadVideos(privateNum);
   }, [searchTerm]);
 
   // 스크롤 이벤트 리스너 등록 및 해제
@@ -68,14 +71,14 @@ function FoodVideos({ searchTerm }) {
     <>
       <div className="search-food">
         <img src="src/Components/RandomFoodSuggestion/ai-icon.png" alt="캐릭터" className="character-image"/>
-        <div className="text-bubble">너가 원하던 {searchTerm} 레시피야</div>
+        <div className="text-bubble"><SummaryEffect text={`너가 원하던 ${searchTerm} 레시피야`}/></div>
       </div>
       <div className="food-videos">
         {videos.map(video => (
           <VideoItem key={video.id} video={video} updateVideoSummary={updateVideoSummary}/>
         ))}
       </div>
-      {isLoading && <div className="loading">Loading...</div>}
+      {isLoading && <div className="loading">영상을 불러오는중 . . .</div>}
     </>
   );
 }

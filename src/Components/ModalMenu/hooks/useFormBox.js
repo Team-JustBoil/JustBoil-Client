@@ -82,21 +82,21 @@ const useFormBox = () => {
         '1,1,1,1' : 68
     };
 
-    const conditionStr = selectedValues.join(',');
-    const result = conditions[conditionStr];
-
     if (
-        selectedValues.length !== 4 ||
-        selectedValues.every(value => value === undefined || value === null) ||
-        selectedValues.some(value => ![0, 1, 2].includes(value))
-      ) {
-        console.log('모든 FormBox를 선택하세요.');
-      } else if (result !== undefined) {
-        console.log(`배열이 [${conditionStr}]입니다. ${result}을 넘깁니다.`);
-      } else {
-        console.log(`배열이 [${conditionStr}]입니다. ${69}을 넘깁니다.`);
-      }
-    };
+      selectedValues.length !== 4 ||
+      selectedValues.every(value => value === undefined || value === null) ||
+      selectedValues.some(value => ![0, 1, 2].includes(value))
+    ) {
+      console.log('모든 FormBox를 선택하세요.');
+      return null;
+    } else {
+      const conditionStr = selectedValues.join(',');
+      const result = conditions[conditionStr] || 1; // 기본값 69
+
+      console.log('result=',result);
+      return result;
+    }
+  };
 
   return {
     selectedValues,

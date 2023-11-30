@@ -1,4 +1,5 @@
-/* ModalMenu.css */
+@import "src/Components/font.css";
+
 .modal-overlay {
     position: fixed;
     top: 0;

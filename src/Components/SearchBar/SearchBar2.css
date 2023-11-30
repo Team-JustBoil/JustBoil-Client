@@ -1,4 +1,4 @@
-/* SearchBar.css */
+@import "../font.css";
 
 .search-container {
     display: flex;
@@ -14,6 +14,7 @@
     max-width: 400px; /* 모바일 화면 폭에 맞춤 */
     margin: 0 auto; /* 화면 중앙 정렬 */
     border-bottom:1px solid black;
+    
 }
 
 .youtube-logo {
@@ -32,6 +33,7 @@
     flex-grow: 0.8;
     margin-left: 0px;
     border: 1px solid black;
+    
 }
 
 .search-input {
@@ -40,10 +42,11 @@
     border: none;
     /* border-radius: 25px; */
     font-size: 16px;
+    font-family: 'JeonjuCraftGoR';
 }
 
 .search-button {
-    background: url('./skkul_search_logo.png') no-repeat center center; /* 이미지 경로 업데이트 */
+    background: url('./skkul_search_input.png') no-repeat center center; /* 이미지 경로 업데이트 */
     background-size: 25px;
     position: absolute; /* 절대 위치 설정 */
     right: 15px; /* 오른쪽 정렬 */
@@ -62,7 +65,7 @@
   
 
 .menu-button {
-    background: url('./skkul_search_menu.png') no-repeat center center; /* 이미지 경로 업데이트 */
+    background: url('./searchBar_menu-2.png') no-repeat center center; /* 이미지 경로 업데이트 */
     border: none;
     padding: 20px 20px;
     cursor: pointer;

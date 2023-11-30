@@ -1,11 +1,18 @@
-import React from 'react';
+import React, { useState } from 'react';
 import FormBox from './ModalCp/FormBox/FormBox';
 import useFormBox from './hooks/useFormBox';
 import './ModalMenu.css';
 
-function Modal({ isOpen, onClose }) {
-  const { selectedValues, handleFormBoxChange, handleCheck } = useFormBox();
+function Modal({  isOpen, onClose, onPrivateNumChange }) {
+  const {selectedValues, handleFormBoxChange, handleCheck } = useFormBox();
 
+  const handleConfirmClick = () => {
+    let result = handleCheck();
+    if (result !== null) {
+      onPrivateNumChange(result);
+    }
+  }
+  
   if (!isOpen) return null;
 
   return (
@@ -42,7 +49,7 @@ function Modal({ isOpen, onClose }) {
           onChange={(selectedValue) => handleFormBoxChange(3, selectedValue)}
         />
 
-        <button onClick={handleCheck}>
+        <button onClick={handleConfirmClick}>
           확인
         </button>
         
