@@ -27,15 +27,15 @@ const BackItem = forwardRef(({ video, handleClick, fetchSummary }, ref) => {
     
 
     return (
-    <>
-      <div className="back" ref={ref}>
-        <h3 onClick={handleClick}>{video.title}</h3>
-        {/* 비디오 요약 */}
-        <SummaryEffect text={summary || '요약 정보를 불러오는 중...'} />
-      </div>
+        <>
+          <div className="back" ref={ref}>
+            <h3 onClick={handleClick}>{video.title}</h3>
+            {/* 비디오 요약 */}
+            {summary ? <SummaryEffect text={summary} /> : '요약 정보를 불러오는 중...'}
+          </div>
+        </>
+      );
       
-    </>
-    );
 });
 
 export default BackItem;
