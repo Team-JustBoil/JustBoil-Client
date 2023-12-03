@@ -19,7 +19,10 @@ function SummaryEffect({ text }) {
   
   
 
-  return <div className="typing-effect">{displayedText}</div>;
+  return <div className="typing-effect" style={{ margin: "10px" }}>
+  {displayedText}
+</div>
+;
 }
 
 export default SummaryEffect;

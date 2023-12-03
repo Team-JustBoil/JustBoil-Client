@@ -6,4 +6,11 @@
     align-items: center;
     justify-content: center;
     font-family: 'JeonjuCraftGoR';
+    margin : auto;
   }
+
+.summayText{
+  margin-bottom:10px;
+  font-size: 1.5em;
+  text-align: center;
+}

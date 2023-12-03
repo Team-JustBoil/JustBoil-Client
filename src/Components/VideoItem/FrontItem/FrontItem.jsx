@@ -7,9 +7,11 @@ const FrontItem = forwardRef(({ video, handleClick }, ref) => {
         <h3 onClick={handleClick}>{video.title}</h3>
         <p onClick={handleClick}>조회수 : {video.view_count} </p>
         <hr></hr>
-
-          <a className="video-item-logo" href={`https://www.youtube.com/watch?v=${video.youtube_id}`} target="_blank" rel="noopener noreferrer"></a>
-
+        <a 
+          className="video-item-logo" 
+          href={`https://www.youtube.com/watch?v=${video.youtube_id}`} 
+          target="_blank" 
+          rel="noopener noreferrer"/>
       </div>
     );
   });

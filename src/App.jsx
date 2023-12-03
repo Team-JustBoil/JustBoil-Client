@@ -41,7 +41,10 @@ function App() {
           />
         {/* 검색했을때는 FoodVideos가 실행, 아니면 RandomFoodSuggestion이 실행되도록 */}
         {searchTerm.length > 0 ? (
-          <FoodVideos searchTerm={searchTerm} privateNum={parseInt(privateNum, 10)} />
+          <FoodVideos 
+            searchTerm={searchTerm} 
+            privateNum={parseInt(privateNum, 10)} 
+          />
         ) : (
           <RandomFoodSuggestion privateNum={parseInt(privateNum, 10)} />
         )}

@@ -10,7 +10,6 @@ const BackItem = forwardRef(({ video, handleClick, fetchSummary }, ref) => {
           try {
             const response = await fetch(`https://www.just-ai.o-r.kr/summary/${video.youtube_id}`);
             const data = await response.json();
-
             setSummary(data.summary); // 상태 업데이트
           } catch (error) {
             console.error('Error fetching summary:', error);
@@ -29,8 +28,13 @@ const BackItem = forwardRef(({ video, handleClick, fetchSummary }, ref) => {
     return (
         <>
           <div className="back" ref={ref}>
-            <h3 onClick={handleClick}>{video.title}</h3>
-            {/* 비디오 요약 */}
+            <h3 onClick={handleClick}>
+              {video.title} 
+            <div style={{ color: "gray", fontSize: "0.8em",textAlign:"center" , paddingTop:"10px"}}> 
+              요약 정보 !
+            </div>
+            </h3>
+            <hr/>
             {summary ? <SummaryEffect text={summary} /> : '요약 정보를 불러오는 중...'}
           </div>
         </>
