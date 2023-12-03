@@ -1,0 +1,82 @@
+@import "../font.css";
+
+.random-food-suggestion {
+    margin-top: 80px;
+    padding: 15px;
+    color:black;
+    /* border-radius: 30px; */
+    /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
+    height: 30px;
+    font-size: 1.1em;
+    text-align: center;
+    max-width: 400px; /* 모바일 화면 폭에 맞춤 */
+    margin: 80px auto 0  auto; /* 화면 중앙 정렬 */
+    display: flex;
+    align-items: center;
+    margin-top: 80px;
+    padding: 15px;
+    max-width: 400px;
+    font-family: 'JeonjuCraftGoR';
+  }
+  .character-image { 
+    width: 50px; /* 이미지 크기 조정 */
+    height: auto;
+    margin-right: 10px; /* 이미지와 텍스트 사이의 간격 */
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  
+  .text-bubble {
+    position: relative; /* 화살표 위치를 위해 필요 */
+    flex-grow: 1;
+    padding: 10px;
+    background-color: #fff; /* 말풍선 배경색을 흰색으로 설정 */
+    border: 1px solid #000; /* 검은색 테두리 추가 */
+    border-radius: 10px; /* 말풍선 둥근 모서리 */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 말풍선 그림자 효과 */
+    font-size: 0.8em;
+    text-align: center;
+
+  }
+  
+  .text-bubble::after {
+    content: '';
+    position: absolute;
+    left: -20px; /* 화살표 위치 조정 */
+    top: 50%;
+    border-width: 10px;
+    border-style: solid;
+    border-color: transparent #000 transparent transparent; /* 화살표 색상을 검은색으로 설정 */
+    transform: translateY(-50%);
+  }
+  
+  
+  
+  
+  .randomfood-videos {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px; /* 아이템 간격 */
+    padding: 20px; /* 패딩 */
+    
+    
+  }
+  .loading {
+    margin-top: 80px;
+    padding: 15px;
+    background-color: #f8f8f8;
+    border-radius: 25px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-size: 1.2em;
+    text-align: center;
+    max-width: 400px; /* 모바일 화면 폭에 맞춤 */
+    margin: 80px auto 0  auto; /* 화면 중앙 정렬 */
+    font-family: 'JeonjuCraftGoR';
+  }
+  
+  /* 더 작은 화면에서 아이템들을 한 열로 배치 */
+  @media (max-width: 600px) {
+    .randomfood-videos {
+      grid-template-columns: 1fr; /* 모바일 화면에서 한 열로 */
+    }
+  }

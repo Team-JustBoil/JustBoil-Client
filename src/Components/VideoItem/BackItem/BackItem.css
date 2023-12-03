@@ -1,0 +1,46 @@
+@import "src/Components/font.css";
+.back {
+    width:100% ;
+    position: relative;
+      /* display: flex; */
+    align-items: center;
+    justify-content: center;
+    font-family: 'JeonjuCraftGoR';
+    height: 100%;
+  }
+
+  .overlay-container{
+    background: #fff;
+    opacity: 1;
+  }
+  
+  .summary-container {
+    top: 50px;
+    left: 0;
+    font-size:16px;
+    font-family: 'JeonjuCraftGoR';
+    /* font-weight:bold; */
+    overflow: auto; /* 스크롤이 필요한 경우만 스크롤이 나타납니다. */
+    max-height: 200px; /* 필요에 따라 최대 높이를 지정하세요. */
+    text-align: center;
+    margin-left: 3%;
+    margin-right: 3%;
+  }
+  .summary-container::-webkit-scrollbar {
+    width: 6px; /* 스크롤바 너비 조절 */
+  }
+  
+  .summary-container::-webkit-scrollbar-thumb {
+    background-color: white; /* 스크롤바 색상 조절 */
+  }
+  .back-img{
+    filter: brightness(0.4);
+    visibility: hidden;
+    background-color: black;
+  }
+
+  .summary-container-background{
+    display: flex;
+    margin-top: 0;
+    z-index: -1
+  }

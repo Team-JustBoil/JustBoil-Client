@@ -1,0 +1,33 @@
+/* VideoItem 컴포넌트를 위한 스타일 */
+.video-item-container {
+  perspective: 1000px;
+  display: flex;
+}
+
+.video-item {
+    border: 1px solid #ddd; /* 테두리 */
+    overflow: hidden; /* 내용이 넘치면 숨김 */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 1); /* 그림자 효과 */
+    background: #fff; /* 배경 색상 */
+    transition: all 1s; /* 클릭 시 변형 효과 */
+    min-height: auto ; 
+    width: 350px;
+    margin: 0 auto; /* 중앙 정렬을 위한 마진 설정 */  
+    transform-style: preserve-3d; /* 3D 변환 스타일 */
+    cursor: pointer;
+    position: relative;
+    border-radius: 8px;
+
+  }
+  
+
+.video-item:hover {
+  transform: scale(1.03);   } 
+
+
+  /* 화면 너비가 900px 이하일 때 적용할 스타일 */
+@media screen and (max-width: 900px) {
+    .video-item {
+      width: 350px; /* 너비를 300px로 고정 */
+    }
+  }
