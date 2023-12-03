@@ -28,7 +28,11 @@ const BackItem = forwardRef(({ video, handleClick, fetchSummary }, ref) => {
     <>
       <div className="back" ref={ref}>
         <div className="overlay-container">
-          <h3 onClick={handleClick}>{video.title}</h3>
+          <h3 onClick={handleClick}>{video.title}
+            <div style={{ color: "gray", fontSize: "0.8em",textAlign:"center" , paddingTop:"10px"}}> 
+              🍽 요약 정보 🍽
+            </div>
+          </h3>
           <hr />
         </div>
         {/* 비디오 요약 */}

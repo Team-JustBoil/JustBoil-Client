@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import VideoItem from '../VideoItem/VideoItem';
 import './FoodVideos.css';
 import SummaryEffect from '../VideoItem/SummaryEffect/SummaryEffect';
+import aiIcon from '../RandomFoodSuggestion/ai-icon.png'; // Import the image
 
 function FoodVideos({ searchTerm,privateNum}) {
   const [videos, setVideos] = useState([]);
@@ -49,9 +50,14 @@ function FoodVideos({ searchTerm,privateNum}) {
 
   // 스크롤 이벤트 처리 함수
   const handleScroll = () => {
-    if (window.innerHeight + document.documentElement.scrollTop !== document.documentElement.offsetHeight || isLoading) return;
-    loadVideos();
+    const scrollThreshold = 0.8; // 조절 가능한 스크롤 임계값 (0.8은 80%를 나타냄)
+    const isApproachingBottom = window.scrollY + window.innerHeight >= scrollThreshold * document.documentElement.scrollHeight;
+  
+    if (isApproachingBottom && !isLoading) {
+      loadVideos();
+    }
   };
+  
 
   // 컴포넌트 마운트 및 searchTerm 변경 시
   useEffect(() => {
@@ -70,7 +76,7 @@ function FoodVideos({ searchTerm,privateNum}) {
   return (
     <>
       <div className="search-food">
-        <img src="src/Components/RandomFoodSuggestion/ai-icon.png" alt="캐릭터" className="character-image"/>
+        <img src={aiIcon} alt="캐릭터" className="character-image" />
         <div className="text-bubble"><SummaryEffect text={`너가 원하던 ${searchTerm} 레시피야`}/></div>
       </div>
       <div className="food-videos">

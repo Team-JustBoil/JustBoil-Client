@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './RandomFoodSuggestion.css';
 import VideoItem from '../VideoItem/VideoItem';
 import SummaryEffect from '../VideoItem/SummaryEffect/SummaryEffect';
+import aiIcon from './ai-icon.png'; // Import the image
 
 function RandomFoodSuggestion({privateNum}) {
   const [randomFood, setRandomFood] = useState('');
@@ -60,10 +61,14 @@ function RandomFoodSuggestion({privateNum}) {
   };
 
   const handleScroll = () => {
-    if (window.innerHeight + document.documentElement.scrollTop !== document.documentElement.offsetHeight || isLoading) return;
-    loadVideos(privateNum);
-  }
-
+    const scrollThreshold = 0.8; // 조절 가능한 스크롤 임계값 (0.8은 80%를 나타냄)
+    const isApproachingBottom = window.scrollY + window.innerHeight >= scrollThreshold * document.documentElement.scrollHeight;
+  
+    if (isApproachingBottom && !isLoading) {
+      loadVideos();
+    }
+  };
+  
   useEffect(() => {
     const loadData = async () => {
       try {
@@ -91,7 +96,7 @@ function RandomFoodSuggestion({privateNum}) {
   return (
     <>
       <div className="random-food-suggestion">
-        <img src="src/Components/RandomFoodSuggestion/ai-icon.png" alt="캐릭터" className="character-image"/>
+        <img src={aiIcon} alt="캐릭터" className="character-image" />
         <div className="text-bubble"> <SummaryEffect text={comment}/></div>
       </div>
       <div className="randomfood-videos">

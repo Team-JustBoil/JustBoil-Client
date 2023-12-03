@@ -47,7 +47,7 @@ function ModalMenu({ isOpen, onClose, onPrivateNumChange, privateNum }) {
         <br />
         {/* 두 번째 FormBox */}
         <FormBox
-          question="요리 유튜브의 얼굴"
+          question="요리 유튜버의 얼굴"
           buttonCount={3}
           buttonTexts={['O', '모두', 'X']}
           onChange={(selectedValue) => handleFormBoxChange(1, selectedValue)}

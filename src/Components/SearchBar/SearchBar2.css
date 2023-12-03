@@ -6,15 +6,14 @@
     background-color: white; 
     justify-content: space-between;
     padding: 10px;
-    position: fixed; /* Fixed positioning */
-    top: 0; /* Align to the top */
-    left: 0; /* Align to the left */
-    right: 0; /* Ensure it stretches to the right edge */
-    z-index: 1000; /* Ensure it stays on top of other content */
-    max-width: 400px; /* 모바일 화면 폭에 맞춤 */
-    margin: 0 auto; /* 화면 중앙 정렬 */
-    border-bottom:1px solid black;
-    
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    max-width: 400px;
+    margin: 0 auto;
+    border-bottom: 1px solid black;
 }
 
 .youtube-logo {
@@ -23,7 +22,6 @@
     height: 40px;
     width: 80px;
     border: none;
-    /* border-radius: 20px; */
     cursor: pointer;
 }
 
@@ -43,13 +41,14 @@
     /* border-radius: 25px; */
     font-size: 16px;
     font-family: 'JeonjuCraftGoR';
+    text-align: left;
 }
 
 .search-button {
     background: url('./skkul_search_input.png') no-repeat center center; /* 이미지 경로 업데이트 */
     background-size: 25px;
     position: absolute; /* 절대 위치 설정 */
-    right: 15px; /* 오른쪽 정렬 */
+    right: 8px; /* 오른쪽 정렬 */
     top: 0; /* 상단 정렬 */
     height: 100%; /* 부모 요소와 같은 높이 */
     width: 30px; /* 버튼 너비 설정 */
@@ -65,7 +64,7 @@
   
 
 .menu-button {
-    background: url('./searchBar_menu-2.png') no-repeat center center; /* 이미지 경로 업데이트 */
+    background: url('./searchBar_menu-0.png') no-repeat center center; /* 이미지 경로 업데이트 */
     border: none;
     padding: 20px 20px;
     cursor: pointer;
