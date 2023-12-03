@@ -3,6 +3,7 @@ import './RandomFoodSuggestion.css';
 import VideoItem from '../VideoItem/VideoItem';
 import SummaryEffect from '../VideoItem/SummaryEffect/SummaryEffect';
 import aiIcon from './ai-icon.png'; // Import the image
+import _debounce from 'lodash/debounce';
 
 function RandomFoodSuggestion({privateNum}) {
   const [randomFood, setRandomFood] = useState('');
@@ -60,14 +61,19 @@ function RandomFoodSuggestion({privateNum}) {
     });
   };
 
-  const handleScroll = () => {
-    const scrollThreshold = 0.8; // 조절 가능한 스크롤 임계값 (0.8은 80%를 나타냄)
+  const handleScroll = _debounce(() => {
+    const scrollThreshold = 0.95;
     const isApproachingBottom = window.scrollY + window.innerHeight >= scrollThreshold * document.documentElement.scrollHeight;
   
     if (isApproachingBottom && !isLoading) {
-      loadVideos();
+      loadVideos(privateNum);
     }
-  };
+  }, 800); // Adjust the debounce delay as needed
+  
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [isLoading, privateNum]);
   
   useEffect(() => {
     const loadData = async () => {

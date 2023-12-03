@@ -3,6 +3,7 @@ import VideoItem from '../VideoItem/VideoItem';
 import './FoodVideos.css';
 import SummaryEffect from '../VideoItem/SummaryEffect/SummaryEffect';
 import aiIcon from '../RandomFoodSuggestion/ai-icon.png'; // Import the image
+import _debounce from 'lodash/debounce';
 
 function FoodVideos({ searchTerm,privateNum}) {
   const [videos, setVideos] = useState([]);
@@ -47,16 +48,19 @@ function FoodVideos({ searchTerm,privateNum}) {
     }));
   };
 
-
-  // 스크롤 이벤트 처리 함수
-  const handleScroll = () => {
-    const scrollThreshold = 0.8; // 조절 가능한 스크롤 임계값 (0.8은 80%를 나타냄)
+  const handleScroll = _debounce(() => {
+    const scrollThreshold = 0.95;
     const isApproachingBottom = window.scrollY + window.innerHeight >= scrollThreshold * document.documentElement.scrollHeight;
   
     if (isApproachingBottom && !isLoading) {
-      loadVideos();
+      loadVideos(privateNum);
     }
-  };
+  }, 800); // Adjust the debounce delay as needed
+  
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [isLoading, privateNum]);
   
 
   // 컴포넌트 마운트 및 searchTerm 변경 시
