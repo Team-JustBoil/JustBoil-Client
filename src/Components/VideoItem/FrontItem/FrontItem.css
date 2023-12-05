@@ -36,7 +36,7 @@ a {
 }
 img {
   width: 100%; /* 이미지 너비 */
-  height: auto; /* 이미지 높이 자동 조절 */
+  height: 225px; /* 이미지 높이 자동 조절 */
   object-fit: cover; /* 이미지 비율 유지하면서 크기 조절 */
 }
   

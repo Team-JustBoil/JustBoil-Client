@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import VideoItem from '../VideoItem/VideoItem';
 import './FoodVideos.css';
 import SummaryEffect from '../VideoItem/SummaryEffect/SummaryEffect';
-import aiIcon from '../RandomFoodSuggestion/ai-icon.png'; // Import the image
+import aiIcon from '../RandomFoodSuggestion/ai.png'; // Import the image
 import _debounce from 'lodash/debounce';
 
 function FoodVideos({ searchTerm,privateNum}) {
