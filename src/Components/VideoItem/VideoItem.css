@@ -20,10 +20,11 @@
     cursor: pointer;
     position: relative;
     border-radius: 8px;
-
   }
 
 .video-item:hover {
   transform: scale(1.03);   } 
 
-
+.video-item-logo {
+  margin-bottom: 5px; /* 하단 마진을 20픽셀로 설정 */
+}

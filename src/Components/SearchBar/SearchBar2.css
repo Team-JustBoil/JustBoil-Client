@@ -3,7 +3,7 @@
 .search-container {
     display: flex;
     align-items: center;
-    background-color: white; 
+    background-color: #243D23; 
     justify-content: space-between;
     padding: 10px;
     position: fixed;
@@ -17,8 +17,8 @@
 }
 
 .youtube-logo {
-    background: url('./skkul_logo4.png') no-repeat center center; 
-    background-size: contain;
+    background: url('./skkul_logo5.png') no-repeat center center; 
+    background-size: 80px;
     height: 40px;
     width: 20%;
     min-width: 40px;
@@ -34,7 +34,7 @@
     border: none;
     padding: 20px 20px;
     cursor: pointer;
-    background-size: contain;
+    background-size: 33px 33px;
     width: 20%;
     min-width: 40px;
     max-width: 40px;
@@ -56,10 +56,11 @@
     flex-grow: 1;
     padding: 8px 12px;
     border: none;
-    /* border-radius: 25px; */
+    border-radius: 10px;
     font-size: 16px;
     font-family: 'JeonjuCraftGoR';
     text-align: left;
+    outline: none;
 }
 /*
 .search-input::placeholder {
