@@ -69,8 +69,7 @@ button:focus-visible {
   }
 } */
 
-body {
   body {
-    font-family: 'Black Han Sans', sans-serif;
+    font-family: 'Pretendard-Black', sans-serif;
+    background-color: aliceblue;
   }
-}

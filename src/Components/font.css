@@ -1,5 +1,11 @@
 @font-face {
-    font-family: 'JeonjuCraftGoR';
+    font-family: 'Pretendard-Black';
+    src: url('../Pretendard-Medium.woff') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'JeonjuCraft';
     src: url('../JeonjuCraft_Go_Regular.ttf') format('woff2');
     font-weight: normal;
     font-style: normal;

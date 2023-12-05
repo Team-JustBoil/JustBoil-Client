@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './RandomFoodSuggestion.css';
 import VideoItem from '../VideoItem/VideoItem';
 import SummaryEffect from '../VideoItem/SummaryEffect/SummaryEffect';
-import aiIcon from './ai-icon.png'; // Import the image
+import aiIcon from './ai.png'; // Import the image
 import _debounce from 'lodash/debounce';
 
 function RandomFoodSuggestion({privateNum}) {

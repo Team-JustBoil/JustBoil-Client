@@ -20,7 +20,7 @@
     border-radius: 5px;
     width:80%;
     max-width: 320px;
-    height: 80%;
+    height: 570px;
     position: relative;
     /* 추가 스타일 */
     display: flex; /* .modal-content 내부에서 자식 아이템들을 효율적으로 배치하기 위해 flex 사용 */
@@ -34,3 +34,18 @@
     margin-left: auto;
 }
 
+@media (max-width: 400px) {
+  .modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    width:80%;
+    max-width: 320px;
+    height: 70%;
+    position: relative;
+    /* 추가 스타일 */
+    display: flex; /* .modal-content 내부에서 자식 아이템들을 효율적으로 배치하기 위해 flex 사용 */
+    flex-direction: column;
+    overflow-y: auto;
+  }
+}

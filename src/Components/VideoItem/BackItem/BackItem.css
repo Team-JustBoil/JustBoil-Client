@@ -5,7 +5,7 @@
       /* display: flex; */
     align-items: center;
     justify-content: center;
-    font-family: 'JeonjuCraftGoR';
+    font-family: 'Pretendard-Black';
     height: 100%;
   }
 
@@ -18,7 +18,7 @@
     top: 50px;
     left: 0;
     font-size:16px;
-    font-family: 'JeonjuCraftGoR';
+    font-family: 'Pretendard-Black';
     /* font-weight:bold; */
     overflow: auto; /* 스크롤이 필요한 경우만 스크롤이 나타납니다. */
     max-height: 200px; /* 필요에 따라 최대 높이를 지정하세요. */
