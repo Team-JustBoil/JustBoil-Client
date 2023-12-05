@@ -5,7 +5,9 @@
 
   grid-template-columns: 1fr;
   gap: 20px; /* 아이템 간격 */
-  padding: 20px; /* 패딩 */
+  padding: 15px; /* 패딩 */
+  max-width: 400px;
+  margin: 0 auto;
 }
 
 .search-food{

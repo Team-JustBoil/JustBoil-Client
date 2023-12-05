@@ -14,6 +14,7 @@
   overflow-y: auto; /* 세로 스크롤 가능 */
   max-width: 400px; /* 모바일 화면 폭에 맞춤 */
   margin: 80px auto 0  auto; /* 화면 중앙 정렬 */
+  justify-content: center;
 }
 
 .search-bar, .random-food-suggestion, .food-videos {
@@ -30,4 +31,14 @@ button, input[type="text"] {
 
 .App-back {
   zoom: 80%; /* 또는 transform: scale(0.8); */
+}
+
+@media (max-width: 400px) {
+  .App-back {
+    /* Apply a scale transformation to reduce horizontal size to 80% */
+    transform: scale(0.8);
+    display: flex;
+    justify-content: center;
+    background-color: black; /* 전체 배경 색상 */
+  }
 }

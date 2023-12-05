@@ -20,20 +20,36 @@
     background: url('./skkul_logo4.png') no-repeat center center; 
     background-size: contain;
     height: 40px;
-    width: 80px;
+    width: 20%;
+    min-width: 40px;
+    max-width: 80px;
     border: none;
     cursor: pointer;
     order: -1;
+}
+
+
+.menu-button {
+    background: url('./searchBar_menu-0.png') no-repeat center center; /* 이미지 경로 업데이트 */
+    border: none;
+    padding: 20px 20px;
+    cursor: pointer;
+    background-size: contain;
+    width: 20%;
+    min-width: 40px;
+    max-width: 40px;
+    z-index: 500;
 }
 
 .search-bar {
     display: flex;
     position: relative; /* 자식 요소의 위치 기준점 설정 */
     flex-grow: 2;
+    width: 20%;
     margin-left: 8px;
     margin-right: 4px;
     border: 1px solid black;
-    
+    overflow: hidden;
 }
 
 .search-input {
@@ -45,6 +61,11 @@
     font-family: 'JeonjuCraftGoR';
     text-align: left;
 }
+/*
+.search-input::placeholder {
+    font-size: 14px;
+  }
+*/
 
 .search-button {
     background: url('./skkul_search_input.png') no-repeat center center; /* 이미지 경로 업데이트 */
@@ -65,13 +86,6 @@
   }
   
 
-.menu-button {
-    background: url('./searchBar_menu-0.png') no-repeat center center; /* 이미지 경로 업데이트 */
-    border: none;
-    padding: 20px 20px;
-    cursor: pointer;
-    background-size: contain;
-}
 /* 슬라이딩 메뉴 스타일 */
 .menu {
     position: fixed;
@@ -88,5 +102,8 @@
   }
   
   
-  
-
+  @media (max-width: 400px) {
+    .search-input::placeholder {
+        font-size: 12px;
+      }
+  }

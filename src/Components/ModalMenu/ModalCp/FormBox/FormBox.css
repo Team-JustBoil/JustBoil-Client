@@ -13,14 +13,17 @@ p {
 }
 
 .button-container {
-  display: flex;
   overflow: hidden;
   margin-top: 4px;
+  width: 100%;
+  display: flex;
+  justify-content: center; /* 가로 방향으로 가운데 정렬 */
+  align-items: center; /* 세로 방향으로 가운데 정렬을 추가 */
 }
 
 .button-label {
   max-width: 100px;
-  width: 100px;
+  width: calc(33.33% - 2px);
   height: 50px;
   padding: 8px 16px;
   background-color: #F7F7F9;

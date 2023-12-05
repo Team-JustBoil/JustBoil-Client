@@ -56,9 +56,10 @@
     display: grid;
     grid-template-columns: 1fr;
     gap: 20px; /* 아이템 간격 */
-    padding: 20px; /* 패딩 */
-    
-    
+    padding: 15px; /* 패딩 */
+    max-width: 400px;
+    margin: 0 auto; /* 위아래는 0, 좌우는 자동으로 설정하여 화면을 가로로 중앙에 정렬 */
+
   }
   .loading {
     margin-top: 80px;
