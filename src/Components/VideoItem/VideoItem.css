@@ -12,7 +12,7 @@
     border: 1px solid #ddd; /* 테두리 */
     overflow: hidden; /* 내용이 넘치면 숨김 */
     box-shadow: rgba(136, 165, 191, 0.48) 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;
-    background: #f8f9fa; /* 배경 색상 */
+    background: #fff; /* 배경 색상 */
     transition: all 1s; /* 클릭 시 변형 효과 */
     min-height: auto ;  
     width: 100%;
@@ -25,6 +25,21 @@
 .video-item:hover {
   transform: scale(1.03);   } 
 
+.info-container {
+  display: flex;
+  align-items: right;
+  justify-content: flex-start;
+}
+  
+.info-container p {
+  flex: 1; /* p tag takes the remaining space */
+  margin-left: 10px;
+  margin-top: 5px;
+}
+
 .video-item-logo {
-  margin-bottom: 5px; /* 하단 마진을 20픽셀로 설정 */
+  width: 50px; /* Adjust the width as needed */
+  height: auto; /* Keep the aspect ratio */
+  margin-bottom: 10px; /* Pushes it to the right */
+  margin-right: 1px;
 }
